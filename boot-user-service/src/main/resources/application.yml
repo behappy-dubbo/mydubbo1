@@ -1,0 +1,26 @@
+server:
+  port: 8081
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+
+spring:
+  datasource:
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://localhost:3306/db_user?serverTimezone=UTC&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: root
+  application:
+    name: boot-user-service
+
+dubbo:
+  registry:
+    address: zookeeper://localhost:2181
+  protocol:
+    port: 20880
+    name: dubbo
+  scan:
+    base-packages: org.xiaowu.boot

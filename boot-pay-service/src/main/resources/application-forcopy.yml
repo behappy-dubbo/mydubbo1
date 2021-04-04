@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: boot-meeting-service
+dubbo:
+  registry:
+    address: zookeeper://localhost:2181
+  protocol:
+    port: 20883
+    name: dubbo
+  scan:
+    base-packages: org.xiaowu.boot
+server:
+  port: 8084
+# 测试负载均衡，idea中复制一份出来，在vm option中加 -Dspring.config.location=classpath:application-forcopy.yml
